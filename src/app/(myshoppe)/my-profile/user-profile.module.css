@@ -1,0 +1,110 @@
+.container {
+    display: flex;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 20%;
+    background-color: #f4f4f4;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+  }
+  
+  .heading {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Poppins';
+  }
+  
+  .menu {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menuItem {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .menuItem:hover {
+    background-color: #ddd;
+  }
+  
+  .active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .logout {
+    color: red;
+  }
+  
+  .logout:hover {
+    background-color: #f8d7da;
+  }
+  
+  /* Main Content */
+  .content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .content h2 {
+    font-size: 2rem;
+    font-family: "Poppins";
+    margin-bottom: 10px;
+  }
+  
+  .content p {
+    color: #555;
+  }
+  
+.formGroup label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 2rem;
+
+    font-weight: bold;
+  }
+  
+  .formGroup input,
+  .formGroup textarea {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  
+  
+  .submitButton {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submitButton:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Orders Section */
+  .orderList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .orderList li {
+    margin-bottom: 10px;
+  }
+  

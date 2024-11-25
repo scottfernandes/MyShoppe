@@ -1,0 +1,56 @@
+.footer {
+    background-color: #333;
+    color: #f1f1f1;
+    padding: 2rem 0;
+    text-align: center;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+  }
+  
+  .section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #f1f1f1;
+  }
+  
+  .linkList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .linkList li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .linkList li a {
+    color: #ddd;
+    text-decoration: none;
+  }
+  
+  .socialIcons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .icon {
+    color: #f1f1f1;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+  }
+  
+  .icon:hover {
+    color: #ff6347; 
+  }
+  
+  .bottomBar {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #aaa;
+  }
+  

@@ -1,0 +1,65 @@
+.main {
+  display: flex;
+  gap: 5rem; 
+  padding: 1rem;
+}
+
+.gridCards {
+  display: grid;
+  margin-top: 1rem;
+  grid-template-columns: repeat(3, minmax(200px, 1fr)); 
+  gap: 1rem; 
+  width: 100%;
+}
+
+.card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px; 
+  background: #fff;
+}
+
+.card:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.productImage {
+  display: block;
+  width: 100%; 
+  height: 200px; 
+  object-fit: cover;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.2); 
+}
+
+.link {
+  text-decoration: none;
+}
+
+.cardContent {
+  padding: 1rem; 
+  display: flex;
+  gap: 0.5rem; 
+
+  justify-content: space-between;
+}
+
+.productTitle {
+  font-size: 1rem; 
+  font-weight: 500; 
+  color: #222; 
+  margin: 0;
+}
+
+.productPrice {
+  font-size: 1rem; 
+  color: #e63946; 
+  font-weight: bold;
+  margin: 0;
+  text-align: right;
+}
+

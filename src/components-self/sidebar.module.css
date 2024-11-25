@@ -1,0 +1,91 @@
+.sidebar {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    height: max-content;
+    padding: 2rem;
+    border: 2px  black;
+    border-style:solid;
+  }
+  
+  .sidebarTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 1rem;
+  }
+  
+  .filterSection {
+    margin-bottom: 1.5rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.1rem;
+    color: #555555;
+    margin-bottom: 0.5rem;
+  }
+  
+  .checkboxLabel, .radioLabel {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    color: #333333;
+    font-size: 1rem;
+  }
+  
+  .checkboxLabel input, .radioLabel input {
+    margin-right: 0.5rem;
+  }
+  
+  .rangeSlider {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: #ddd;
+    outline: none;
+    border-radius: 5px;
+    margin: 0.5rem 0;
+  }
+  
+  .rangeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #5cb85c;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  .priceDisplay {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333333;
+    margin-top: 0.5rem;
+  }
+  
+  .buttonSection {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .resetButton, .applyButton {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .resetButton {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+  }
+  
+  .applyButton {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+  }
+  
