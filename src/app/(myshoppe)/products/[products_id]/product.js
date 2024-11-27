@@ -1,11 +1,13 @@
 "use client"
 import React, { useContext, useEffect, useState } from "react";
 import classes from "@/app/(myshoppe)/products/[products_id]/product.module.css";
-import { FaCheckCircle, FaRegCommentAlt } from "react-icons/fa";
+import { FaCheckCircle, FaExclamationCircle, FaRegCommentAlt } from "react-icons/fa";
 import RatingStars from "@/components-self/Rating";
 import CartContext from "@/app/context/CartFunctions";
 import axios from "axios";
 import { useSession } from "next-auth/react";
+import CheckoutBtn from "@/components-self/CheckoutBtn";
+import Loader from "../loading";
 
 export default function ProductPage({id}) {
   const [product,setProduct]=useState(null)
@@ -13,23 +15,11 @@ export default function ProductPage({id}) {
   const cartCtx = useContext(CartContext)
   
   const {data:session}=useSession()
-
+  const success = cartCtx.success
+  const error = cartCtx.error
   
 
-  function ReturnBtns(){
-    if(session){
-     return(
-     <>
-      <button onClick={()=>(cartCtx.addToCart('scottfernandes3586@gmail.com',cartItem))} className={classes.addToCartButton}>Add to Cart</button>
-      <button className={classes.buyNow}>Buy Now</button>
-     </>
-     )
-
-    }
-    else{
-      return <p>You cannot purchase this product unless you are logged in.</p>
-    }
-  }
+ 
   
  
   useEffect(() => {
@@ -43,10 +33,7 @@ export default function ProductPage({id}) {
           console.error(err);
           
         })
-         
-      
-         
-    
+  
     };
 
     fetchProduct();
@@ -55,15 +42,29 @@ export default function ProductPage({id}) {
   
 
   if (!product) {
-    return <p>Loading...</p>;
+    return <Loader/>
   }
   const cartItem = {
     id:product.id,
+    quantity:1,
     image:product.thumbnail,
     title:product.title,
     price:product.price
   }
+  function ReturnBtns(){
+    if(session){
+     return(
+     <>
+      <button onClick={()=>(cartCtx.addToCart('scottfernandes3586@gmail.com',cartItem))} className={classes.addToCartButton}>Add to Cart</button>
+      <CheckoutBtn items={[cartItem]}/>
+     </>
+     )
 
+    }
+    else{
+      return <p>You cannot purchase this product unless you are logged in.</p>
+    }
+  }
   return (
     <div className={classes.productPage}>
       <div className={classes.productContainer}>
@@ -103,7 +104,21 @@ export default function ProductPage({id}) {
             <ReturnBtns/>
           </div>
         </div>
+        
       </div>
+
+      {success && (
+          <div className={`${classes.message} ${classes.successMessage}`}>
+            <FaCheckCircle className={classes.icon} />
+            <p>{success}</p>
+          </div>
+        )}
+        {error && (
+          <div className={`${classes.message} ${classes.errorMessage}`}>
+            <FaExclamationCircle className={classes.icon} />
+            <p>{error}</p>
+          </div>
+        )}
 
         <div className={classes.additionalDetails}>
         <h1>Additional Details</h1>

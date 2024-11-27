@@ -6,7 +6,8 @@ import logo from '@/assets/cart-icon.png';
 import Image from 'next/image';
 import { Roboto } from 'next/font/google';
 import { signIn,signOut, useSession } from "next-auth/react"; 
-import { redirect } from 'next/navigation';
+import { redirect, useRouter } from 'next/navigation';
+import Loader from '@/app/loading';
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -17,10 +18,15 @@ const roboto = Roboto({
 
 export default function LoginForm() {
 
-  const {data:session} = useSession()
+  const {data:session,status} = useSession()
+  const router = useRouter();
 
-  if(session){
-    redirect('my-profile')
+  if (status === "authenticated") {
+    redirect("/my-profile");
+  }
+
+  if (status === "loading") {
+    return <div><Loader/></div>;
   }
   
   const emailRef = useRef()

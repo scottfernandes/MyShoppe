@@ -6,22 +6,24 @@ export async function POST(request) {
   try {
     const body = await request.json();
 
-    const { cartItems } = body; // Expecting an array of items in the cart
+    const { cartItems } = body; 
     console.log(cartItems);
-
+    
     if (!cartItems || !Array.isArray(cartItems) || cartItems.length === 0) {
       throw new Error("Cart is empty or invalid");
     }
 
     const lineItems = cartItems.map((item) => {
-      if (!item.name || !item.price || !item.quantity || !item.image) {
+      console.log(item.title,item.price,item.image,item.quantity);
+      
+      if (!item.title || !item.price || !item.quantity || !item.image) {
         throw new Error(`Invalid item data: ${JSON.stringify(item)}`);
       }
       return {
         price_data: {
           currency: "usd",
           product_data: {
-            name: item.name,
+            name: item.title,
             images: [item.image],
           },
           unit_amount: Math.round(item.price * 100), // Convert price to cents

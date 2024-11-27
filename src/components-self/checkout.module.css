@@ -1,18 +1,17 @@
 .checkoutButton {
-    width: 100%;
-    padding: 0.75rem;
-    background-color: #0db281;
-    color: #ffffff;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: all 0.3s ease-in-out;
+  background:transparent;
+  border: 1px solid;
+  padding: 0.75rem 1.5rem;
+  color: #e20404;
+  border-color: #e42200;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+
   }
   
   .checkoutButton:hover {
-    background-color: #08774c;
+    transform: scale(1.1);
   }
   
